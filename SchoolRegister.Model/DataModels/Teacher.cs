@@ -6,6 +6,6 @@ namespace SchoolRegister.Model.DataModels
     {
     public class Teacher
     {
-        public IList<Subject> Subject { get; set; }
+        public IList<Subject> Subject { get; set; } 
     }
 }
