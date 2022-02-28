@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\SchoolRegister.model\SchoolRegister.model.csproj" />
+    <ProjectReference Include="..\SchoolRegister.viewmodels\SchoolRegister.viewmodels.csproj" />
+    <ProjectReference Include="..\SchoolRegister.dal\SchoolRegister.dal.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>
