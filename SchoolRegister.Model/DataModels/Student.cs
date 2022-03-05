@@ -13,7 +13,6 @@ namespace SchoolRegister.Model.DataModels
         public double AverageGrade { get; }
         public Dictionary<string, double> AverageGradePerSubject { get; }
         public Dictionary<string, List<GradeScale>> GradePerSubject { get; }
-        public Student() { }
     }
 
 }
