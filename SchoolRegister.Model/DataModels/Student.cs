@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+
 namespace SchoolRegister.Model.DataModels
 {
     public class Student
@@ -11,10 +13,42 @@ namespace SchoolRegister.Model.DataModels
         public Parent Parent { get; set; }
         public int? ParentId { get; set; }
 
-        public double AverageGrade { get; }
-        public IDictionary<string, double> AverageGradePerPerson { get; }
-        public IDictionary<string, List<GradeScale>> GradesPerSubject { get; }
+        public double AverageGrade
+        {
+            get
+            {
+                return Grades.Average(grade => (double)grade.GradeValue);
+            }
+        }
+        public IDictionary<string, double> AverageGradePerPerson
+        {
+            get
+            {
+                return Grades.GroupBy(grade => grade.Subject.Name)
+                .Select(g => new
+                {
+                    SubName = g.Key,
+                    AverageGrade = g.Average(grade => (double)grade.GradeValue)
+                }
+            )
+            .ToDictionary(g => g.SubName, global => global.AverageGrade);
+            }
+        }
+        public IDictionary<string, List<GradeScale>> GradesPerSubject 
+        {
+            get
+            {
+                return Grades.GroupBy(grade => grade.Subject.Name)
+                .Select(g => new
+                {
+                    SubName = g.Key,
+                    Grades = g.Select(gv => gv.GradeValue).ToList()
+                }
+            )
+            .ToDictionary(g => g.SubName, g => g.Grades);
+            }
+        }
 
-        public Student(){}
+        public Student() { }
     }
 }
