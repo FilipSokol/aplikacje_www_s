@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using SchoolRegister.Model.DataModels;
 using SchoolRegister.Web.Models;
 
 namespace SchoolRegister.Web.Controllers
@@ -20,6 +21,11 @@ namespace SchoolRegister.Web.Controllers
 
         public IActionResult Index()
         {
+            //var student = new Model.DataModels.Student { Id = 1, Email = "a@b.com" };
+            //var aplikacje = new Subject { Id = 2,  }
+            //student.Grades.Add(new Model.DataModels.Grade { GradeValue = Model.DataModels.GradeScale.DB, SubjectId = 2 });
+
+
             return View();
         }
 
