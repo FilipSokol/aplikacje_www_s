@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace SchoolRegister.Model.DataModels
 {
-    public class Teacher
+    public class Teacher : User
     {
         public Teacher(){}
         public IList<Subject> Subjects {get; set;}
