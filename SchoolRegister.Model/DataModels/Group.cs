@@ -10,5 +10,10 @@ namespace SchoolRegister.Model.DataModels
         public IList<Student> Students { get; set; }
 
         public IList<SubcjetGroup> SubcjetGroups { get; set; }
+
+        public Group()
+        {
+
+        }
     }
 }
