@@ -4,12 +4,10 @@ using System.Collections;
 using System.Collections.Generic;
 namespace SchoolRegister.Model.DataModels
 {
-    public class Teacher : User
+    public class Parent
     {
-        public IList<Subject> Subjects { get; set; }
-        public string Title { get; set; }
-
-        public Teacher()
+        public IList<Student> Students { get; set; }
+        public Parent()
         {
 
         }
