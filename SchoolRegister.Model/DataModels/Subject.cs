@@ -1,0 +1,10 @@
+
+namespace SchoolRegister.Model.DataModels
+{
+
+
+
+
+
+
+}
