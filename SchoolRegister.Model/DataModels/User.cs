@@ -1,12 +1,15 @@
-using Microsoft.AspNetCore.Identity;
 using System;
 
-namespace SchoolRegister.Model.DataModels
+namespace SchoolRegister.Model
 {
-    public class User : IdentityUser<int>
+    public class User
     {
+
         public string FirstName { get; set; }
+
         public string LastName { get; set; }
+
         public DateTime RegistrationDate { get; set; }
+
     }
 }
