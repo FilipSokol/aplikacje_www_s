@@ -8,7 +8,6 @@ namespace SchoolRegister.Model.DataModels
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime RegistrationDate { get; set; }
-
         public User() { }
     }
 }
