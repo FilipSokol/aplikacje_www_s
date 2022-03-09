@@ -1,10 +1,11 @@
-﻿using System;
-namespace SchoolRegister.Model.DataModels
+﻿namespace SchoolRegister.Model.DataModels
 {
-    public class RoleValue
+    public enum RoleValue
     {
-        public RoleValue()
-        {
-        }
+       User = 0,
+       Student = 1,
+       Parent = 2,
+       Teacher = 3,
+       Admin = 4
     }
 }

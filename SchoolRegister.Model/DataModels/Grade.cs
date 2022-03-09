@@ -1,11 +1,16 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System;
+﻿using System;
+
 namespace SchoolRegister.Model.DataModels
 {
-    public class User : IdentityUser<int>
+    public class Grade
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public DateTime RegistrationDate { get; set; }
+        public DateTime DateOfIssue { get; set; }
+        public GradeScale GradeValue { get; set; }
+        public Subject Subject { get; set; }
+        public int SubjectId { get; set; }
+        public int StudentId { get; set; }
+        public Student Student { get; set; }
+        public Grade() { }
     }
+   
 }

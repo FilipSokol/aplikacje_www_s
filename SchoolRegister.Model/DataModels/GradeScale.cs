@@ -1,5 +1,4 @@
-﻿using System;
-namespace SchoolRegister.Model.DataModels
+﻿namespace SchoolRegister.Model.DataModels
 {
     public enum GradeScale
     {
