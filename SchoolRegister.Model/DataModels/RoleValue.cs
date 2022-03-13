@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace SchoolRegister.Model.DataModels
 {
-    public class Teacher:User
+    public enum RoleValue
     {
-        public string title { get; set; }
-        public IList<Subject> subjects { get; set; }
-        public Teacher() { }
+        user = 0,
+        student = 1,
+        parent = 2,
+        teacher = 3,
+        admin = 4 
     }
 }

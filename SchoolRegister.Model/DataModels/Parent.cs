@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace SchoolRegister.Model.DataModels
 {
-    public class Teacher:User
+    public class Parent:User
     {
-        public string title { get; set; }
-        public IList<Subject> subjects { get; set; }
-        public Teacher() { }
+        public IList<Student> students { get; set; }
+        public Parent() { }
     }
 }

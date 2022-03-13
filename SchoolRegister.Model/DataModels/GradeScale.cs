@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace SchoolRegister.Model.DataModels
 {
-    public class Teacher:User
+    public enum GradeScale
     {
-        public string title { get; set; }
-        public IList<Subject> subjects { get; set; }
-        public Teacher() { }
+        NDST = 2,
+        DST = 3,
+        DB = 4, 
+        BDB = 5
     }
+
+    
 }

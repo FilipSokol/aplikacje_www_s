@@ -10,7 +10,9 @@ namespace SchoolRegister.Model.DataModels
     {
         public Subject subject { get; set; }
         public int subjectId { get; set; }
+        public Group group { get; set; }
         public int groupId { get; set; }
+        public SubjectGroup() { }
 
     }
 }
