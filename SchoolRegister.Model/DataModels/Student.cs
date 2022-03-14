@@ -25,23 +25,16 @@ namespace SchoolRegister.Model.DataModels
 
         //}
 
-        public IDictionary<string, double> AverageGradePerSubject 
-        {
-            get 
-            { 
-                var avarageGradePerSubject = new Dictionary<string, double>();
+      
+        public IDictionary<string, double> AverageGradePerSubject => Grades
+                    .GroupBy(x => x.Subject.Name)
+                    .Select(x => new { SubjectName = x.Key, SubjectAverage = x.Average(x => (int)x.GradeValue) })
+                    .ToDictionary(x => x.SubjectName, x => x.SubjectAverage);
 
-                var Grp = Grades.GroupBy(N =>N.Subject.Name).ToList();
-
-                Grp.ForEach(x =>
-                {
-                    avarageGradePerSubject.Add(x.Key, Grades.Where(y => y.Subject.Name == x.Key).Average(G => (int)G.GradeValue));
-                });
-                return avarageGradePerSubject;
-            }
-        }
-
-        public IDictionary<string, List<GradeScale>> GradesPerSubject { get;}
+        public IDictionary<string, List<GradeScale>> GradesPerSubject => Grades
+                    .GroupBy(x => x.Subject.Name)
+                    .Select(x => new { SubjectName = x.Key, Grades = x.Select(x => x.GradeValue).ToList() })
+                    .ToDictionary(x => x.SubjectName, x => x.Grades);
 
         public Student()
         {
