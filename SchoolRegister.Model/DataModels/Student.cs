@@ -20,7 +20,7 @@ namespace SchoolRegister.Model.DataModels
                 return Grades.Average(grade => (double)grade.GradeValue);
             }
         }
-        public IDictionary<string, double> AverageGradePerPerson
+        public IDictionary<string, double> AverageGradePerSubject
         {
             get
             {
