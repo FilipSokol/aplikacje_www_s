@@ -11,9 +11,20 @@ namespace SchoolRegister.Model.DataModels
         public IList<Grade> Grades { get; set; }
         public Parent Parent { get; set; }
         public int? ParentId { get; set; }
-        public double AverageGrade => Grades.Average(item => (int)item.GradeValue);
-        public IDictionary<string, double> AverageGradePerSubject => Grades.GroupBy(name => name.Subject.Name).
-        public IDictionary<string, List<GradeScale>> GradesPerSubject { get; }
+        double AveragedGrade => Grades.Average(x => (int)x.GradeValue);
+
+        public IDictionary<string, double> AverageGradePerSubject => Grades
+            .GroupBy(z => z.Subject.Name)
+            .Select(s => s)
+            .ToDictionary(x => x.Key, x => x.Average(x => (int)x.GradeValue));
+            
+        public IDictionary<string, List<GradeScale>> GradesPerSubject => Grades
+            .GroupBy(z => z.Subject.Name)
+            .Select(s => s)
+            .ToDictionary(x => x.Key, x => x.Select(x=>x.GradeValue).ToList());
+
         public Student() { }
     }
+
+    
 }
