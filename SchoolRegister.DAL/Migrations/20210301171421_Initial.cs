@@ -219,7 +219,7 @@ namespace SchoolRegister.DAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Grades", x => new { x.DateOfIssue, x.SubjectId, x.StudentId });
+                    table.PrimaryKey("PK_Grades", x => new { x.DateOfIssue, x.StudentId, x.SubjectId });
                     table.ForeignKey(
                         name: "FK_Grades_AspNetUsers_StudentId",
                         column: x => x.StudentId,

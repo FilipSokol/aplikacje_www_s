@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using SchoolRegister.DAL.EF;
 
 namespace SchoolRegister.DAL.Migrations
 {
@@ -128,16 +129,16 @@ namespace SchoolRegister.DAL.Migrations
                     b.Property<DateTime>("DateOfIssue")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("SubjectId")
+                    b.Property<int>("StudentId")
                         .HasColumnType("int");
 
-                    b.Property<int>("StudentId")
+                    b.Property<int>("SubjectId")
                         .HasColumnType("int");
 
                     b.Property<int>("GradeValue")
                         .HasColumnType("int");
 
-                    b.HasKey("DateOfIssue", "SubjectId", "StudentId");
+                    b.HasKey("DateOfIssue", "StudentId", "SubjectId");
 
                     b.HasIndex("StudentId");
 
